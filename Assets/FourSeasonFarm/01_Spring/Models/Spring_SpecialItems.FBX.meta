@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: b5c112af1ee5044498e0fc222eea14d8
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Village_Fountain
+    100004: SaintPatrick_GoldCoin
+    100006: SaintPatrick_GoldCoin_Group
+    100008: Sakura_Tree_2
+    100010: Object1260
+    100012: Object1258
+    100014: Object1257
+    100016: Object1255
+    100018: Object1254
+    100020: Object1253
+    100022: Object1252
+    100024: Object394
+    100026: Object393
+    100028: Object392
+    100030: Object391
+    100032: Object1256
+    100034: Object1261
+    100036: GoldCoin_Pot
+    100038: Clover
+    100040: Green_Hat
+    100042: Flower _Group2
+    100044: Spring_tree
+    100046: FlowerGroup_1
+    100048: Sakura_Tree_1
+    100050: Flower_Cart
+    400000: //RootNode
+    400002: Village_Fountain
+    400004: SaintPatrick_GoldCoin
+    400006: SaintPatrick_GoldCoin_Group
+    400008: Sakura_Tree_2
+    400010: Object1260
+    400012: Object1258
+    400014: Object1257
+    400016: Object1255
+    400018: Object1254
+    400020: Object1253
+    400022: Object1252
+    400024: Object394
+    400026: Object393
+    400028: Object392
+    400030: Object391
+    400032: Object1256
+    400034: Object1261
+    400036: GoldCoin_Pot
+    400038: Clover
+    400040: Green_Hat
+    400042: Flower _Group2
+    400044: Spring_tree
+    400046: FlowerGroup_1
+    400048: Sakura_Tree_1
+    400050: Flower_Cart
+    2300000: Village_Fountain
+    2300002: SaintPatrick_GoldCoin
+    2300004: Sakura_Tree_2
+    2300006: Object1260
+    2300008: Object1258
+    2300010: Object1257
+    2300012: Object1255
+    2300014: Object1254
+    2300016: Object1253
+    2300018: Object1252
+    2300020: Object394
+    2300022: Object393
+    2300024: Object392
+    2300026: Object391
+    2300028: Object1256
+    2300030: Object1261
+    2300032: GoldCoin_Pot
+    2300034: Clover
+    2300036: Green_Hat
+    2300038: Flower _Group2
+    2300040: Spring_tree
+    2300042: FlowerGroup_1
+    2300044: Sakura_Tree_1
+    2300046: Flower_Cart
+    3300000: Village_Fountain
+    3300002: SaintPatrick_GoldCoin
+    3300004: Sakura_Tree_2
+    3300006: Object1260
+    3300008: Object1258
+    3300010: Object1257
+    3300012: Object1255
+    3300014: Object1254
+    3300016: Object1253
+    3300018: Object1252
+    3300020: Object394
+    3300022: Object393
+    3300024: Object392
+    3300026: Object391
+    3300028: Object1256
+    3300030: Object1261
+    3300032: GoldCoin_Pot
+    3300034: Clover
+    3300036: Green_Hat
+    3300038: Flower _Group2
+    3300040: Spring_tree
+    3300042: FlowerGroup_1
+    3300044: Sakura_Tree_1
+    3300046: Flower_Cart
+    4300000: Sakura_Tree_1
+    4300002: Spring_tree
+    4300004: Flower_Cart
+    4300006: FlowerGroup_1
+    4300008: Flower _Group2
+    4300010: Green_Hat
+    4300012: Clover
+    4300014: GoldCoin_Pot
+    4300016: Village_Fountain
+    4300018: SaintPatrick_GoldCoin
+    4300020: Object1261
+    4300022: Object1256
+    4300024: Object391
+    4300026: Object392
+    4300028: Object393
+    4300030: Object394
+    4300032: Object1252
+    4300034: Object1253
+    4300036: Object1254
+    4300038: Object1255
+    4300040: Object1257
+    4300042: Object1258
+    4300044: Object1260
+    4300046: Sakura_Tree_2
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 3
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.01
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
