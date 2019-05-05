@@ -80,6 +80,8 @@ public class LivestockFarm : MonoBehaviour
     }
     void DoAction(JsonData data)
     {
+        int num = 0;
+
         foreach (GameObject child in PigGroup)
         {
             child.SetActive(false);
@@ -90,7 +92,8 @@ public class LivestockFarm : MonoBehaviour
         if (jd.Count <= 0)
             return;
         bool IsFried = Static.Instance.IsFriend;
-        int num = 0;
+        
+
         foreach (JsonData child in jd)
         {
             TransformData transformData = GROUP.AddItem().GetComponent<TransformData>().GetBody();
@@ -106,12 +109,21 @@ public class LivestockFarm : MonoBehaviour
             Text bili_cz = transformData.GetObjectValue<Text>("bili_cz");
             Text bili_zk = transformData.GetObjectValue<Text>("bili_zk");
 
+            Text offer_id = transformData.GetObjectValue<Text>("offer_id");
+            //Text zhu_id = transformData.GetObjectValue<Text>("zhu_id");
+            Text money = transformData.GetObjectValue<Text>("money");
+            Text shouyi = transformData.GetObjectValue<Text>("shouyi");
+            Text creat_time = transformData.GetObjectValue<Text>("creat_time");
+
+
             bili_cz.text = child["ccz"].ToString() + "/100";
             bili_zk.text = child["jkz"].ToString() + "/100";
             num_cz.fillAmount = float.Parse(child["ccz"].ToString()) / 100;
             num_jk.fillAmount = float.Parse(child["jkz"].ToString()) / 100;
 
             //升级
+            
+
             btn_sj.onClick.AddListener(delegate ()
             {
                 GameManager.GetGameManager.OpenWindow(win_up);
@@ -246,6 +258,7 @@ public class LivestockFarm : MonoBehaviour
             TransformData PIGTS = null;
             if (num < PigModel.childCount)
             {
+
                 PIGTS = PigGroup[num].GetComponent<TransformData>();
                 PigGroup[num].SetActive(true);
                 num++;
