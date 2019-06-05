@@ -12,7 +12,7 @@ public class LivestockFarm : MonoBehaviour
     [SerializeField]
     Model3DButton BTN;
     [SerializeField]
-    HttpModel cs_hhtp, cz_http, wy_http, ys_http, chanzai_http, sj_http;
+    HttpModel cs_hhtp, ck_http, cz_http, wy_http, ys_http, chanzai_http, sj_http;
 
     HttpModel http_syc;
     [SerializeField]
@@ -92,7 +92,7 @@ public class LivestockFarm : MonoBehaviour
         if (jd.Count <= 0)
             return;
         bool IsFried = Static.Instance.IsFriend;
-        
+
 
         foreach (JsonData child in jd)
         {
@@ -114,15 +114,23 @@ public class LivestockFarm : MonoBehaviour
             Text money = transformData.GetObjectValue<Text>("money");
             Text shouyi = transformData.GetObjectValue<Text>("shouyi");
             Text creat_time = transformData.GetObjectValue<Text>("creat_time");
+            Text start_time = transformData.GetObjectValue<Text>("start_time");
+            Text end_time = transformData.GetObjectValue<Text>("end_time");
 
+            offer_id.text = child["offer_id"].ToString();
+            money.text = child["money"].ToString();
+            shouyi.text = child["shouyi"].ToString();
+            creat_time.text = child["creat_time"].ToString();
+            start_time.text = child["start_time"].ToString();
+            end_time.text = child["end_time"].ToString();
 
-            bili_cz.text = child["ccz"].ToString() + "/100";
-            bili_zk.text = child["jkz"].ToString() + "/100";
-            num_cz.fillAmount = float.Parse(child["ccz"].ToString()) / 100;
-            num_jk.fillAmount = float.Parse(child["jkz"].ToString()) / 100;
+            //bili_cz.text = child["ccz"].ToString() + "/100";
+            //bili_zk.text = child["jkz"].ToString() + "/100";
+            //num_cz.fillAmount = float.Parse(child["ccz"].ToString()) / 100;
+            //num_jk.fillAmount = float.Parse(child["jkz"].ToString()) / 100;
 
             //升级
-            
+
 
             btn_sj.onClick.AddListener(delegate ()
             {
@@ -166,6 +174,8 @@ public class LivestockFarm : MonoBehaviour
                         UpdateSyc();
                 });
                 cs_hhtp.Data.AddData("sy_id", child["sy_id"].ToString());
+                cs_hhtp.Data.AddData("money", child["money"].ToString());
+                cs_hhtp.Data.AddData("txflag", "1");
                 cs_hhtp.Get();
             });
 
@@ -247,12 +257,13 @@ public class LivestockFarm : MonoBehaviour
             //查看
             btn_ck.onClick.AddListener(delegate ()
             {
-                if (curenobj != null)
+                ck_http.HttpSuccessCallBack.Addlistener(delegate (ReturnHttpMessage msg)
                 {
-                    curenobj.SetActive(false);
-                }
-                curenobj = transformData.GetObjectValue<Image>("sm").gameObject;
-                curenobj.SetActive(true);
+                    if (msg.Code == HttpCode.SUCCESS)
+                        UpdateSyc();
+                });
+                ck_http.Data.AddData("offer_id", child["offer_id"].ToString());
+                ck_http.Get();
             });
 
             TransformData PIGTS = null;
@@ -263,7 +274,7 @@ public class LivestockFarm : MonoBehaviour
                 PigGroup[num].SetActive(true);
                 num++;
             }
-
+            /*
             if (child["type_id"].ToString() == "钻石猪")
             {
                 transformData.GetObjectValue<Image>("z").gameObject.SetActive(true);
@@ -272,7 +283,7 @@ public class LivestockFarm : MonoBehaviour
                     PIGTS.GetObjectValue<Transform>("MAOZI").gameObject.SetActive(true);
                     PIGTS.GetObjectValue<Transform>("YIFU").gameObject.SetActive(true);
                 }
-    
+
             }
 
             if (child["type_id"].ToString() == "金猪")
@@ -287,11 +298,12 @@ public class LivestockFarm : MonoBehaviour
 
             if (child["type_id"].ToString() == "银猪")
             {
-                if(!IsFried)
-                btn_sj.gameObject.SetActive(true);
+                if (!IsFried)
+                    btn_sj.gameObject.SetActive(true);
 
                 transformData.GetObjectValue<Image>("y").gameObject.SetActive(true);
             }
+            */
         }
     }
 

@@ -17,6 +17,7 @@ public class LoadImage : MonoBehaviour
 {
 
     public static LoadImage GetLoadIamge;
+
     void Awake()
     {
         GetLoadIamge = this;
@@ -140,7 +141,6 @@ public class LoadImage : MonoBehaviour
 
     public void SendImage(Texture2D img)
     {
-
         current2D = img;
         IMGTT.texture = img;
         Up();

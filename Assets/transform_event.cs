@@ -3,13 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class transform_event : MonoBehaviour {
+public class transform_event : MonoBehaviour
+{
 
+    public Image TargetImage;
 
     [SerializeField]
     Sprite finish_sprit;
     // Use this for initialization
 
+
+
+    private void Update()
+    {
+        _timer.UpdateRepeatTimer(Time.deltaTime);
+    }
 
     public void bt_type(string obj)
     {
@@ -94,6 +102,8 @@ public class transform_event : MonoBehaviour {
             Sprite sprite = Sprite.Create(www.texture, new Rect(0, 0, www.texture.width, www.texture.height), Vector2.zero);
             if (this.GetComponent<Image>() != null)
                 this.GetComponent<Image>().sprite = sprite;
+            else
+                TargetImage.sprite = sprite;
             Button thisbutton = this.gameObject.AddComponent<Button>();
             thisbutton.onClick.AddListener(delegate () { });
         }
