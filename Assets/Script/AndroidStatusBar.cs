@@ -57,54 +57,12 @@ public class AndroidStatusBar
 
     private static void applyUIStates()
     {
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            int newFlagsValue = 0;
-            int newSystemUiVisibilityValue = 0;
-
-            // Apply dim values
-            if (_dimmed) newSystemUiVisibilityValue |= VIEW_SYSTEM_UI_FLAG_LOW_PROFILE;
-
-            // Apply color values
-            if (_statusBarColor != DEFAULT_BACKGROUND_COLOR) newFlagsValue |= WINDOW_FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS;
-
-            // Apply status bar values
-            switch (_statusBarState)
-            {
-                case States.Visible:
-                    _isStatusBarTranslucent = false;
-                    newFlagsValue |= WINDOW_FLAG_FORCE_NOT_FULLSCREEN;
-                    break;
-                case States.VisibleOverContent:
-                    _isStatusBarTranslucent = false;
-                    newFlagsValue |= WINDOW_FLAG_FORCE_NOT_FULLSCREEN | WINDOW_FLAG_LAYOUT_IN_SCREEN;
-                    newSystemUiVisibilityValue |= VIEW_SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
-                    break;
-                case States.TranslucentOverContent:
-                    _isStatusBarTranslucent = true;
-                    newFlagsValue |= WINDOW_FLAG_FORCE_NOT_FULLSCREEN | WINDOW_FLAG_LAYOUT_IN_SCREEN | WINDOW_FLAG_TRANSLUCENT_STATUS;
-                    newSystemUiVisibilityValue |= VIEW_SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN;
-                    break;
-                case States.Hidden:
-                    newFlagsValue |= WINDOW_FLAG_FULLSCREEN | WINDOW_FLAG_LAYOUT_IN_SCREEN;
-                    if (_isStatusBarTranslucent) newFlagsValue |= WINDOW_FLAG_TRANSLUCENT_STATUS;
-                    break;
-            }
-            if (Screen.fullScreen) Screen.fullScreen = false;
-
-            // Applies everything natively
-            setFlags(newFlagsValue);
-            setSystemUiVisibility(newSystemUiVisibilityValue);
-
-        }
+       
     }
 
     private static void applyUIColors()
     {
-        if (Application.platform == RuntimePlatform.Android)
-        {
-            runOnAndroidUiThread(applyUIColorsAndroidInThread);
-        }
+
     }
 
 #if UNITY_ANDROID

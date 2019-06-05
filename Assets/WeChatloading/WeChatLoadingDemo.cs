@@ -13,9 +13,9 @@ public class WeChatLoadingDemo : MonoBehaviour {
     [SerializeField]
     HttpModel login;
 
-#if UNITY_ANDROID
-    [DllImport("__Internal")]
-    private static extern void _WeichatLogin();
+#if UNITY_IPHONE
+//    [DllImport("__Internal")]
+//    private static extern void _WeichatLogin();
 #endif
 
     private void Start()
@@ -49,7 +49,7 @@ public class WeChatLoadingDemo : MonoBehaviour {
 
     void Wechat_IOS_Loading()
     {
-        _WeichatLogin();
+        //_WeichatLogin();
     }
 
     //微信回调.返回Code数据 安卓苹果定义同方法

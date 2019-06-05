@@ -11,7 +11,7 @@ public class IOSPhoto : MonoBehaviour
     void Start()
     {
 #if UNITY_IPHONE
-        ios.Initialization();
+        Initialization();
 #endif
     }
     // Use this for initialization
@@ -36,7 +36,7 @@ public class IOSPhoto : MonoBehaviour
     void OnDisable()
     {
 #if UNITY_IPHONE
-        ios.DestroyFuntion();
+        DestroyFuntion();
 #endif
 
     }

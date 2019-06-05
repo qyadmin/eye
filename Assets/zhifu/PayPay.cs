@@ -33,8 +33,8 @@ public class PayPay : MonoBehaviour
     {
     }
 
-    [DllImport("__Internal")]
-    private static extern void iospay(string body, string amount, string trade_no);
+    //[DllImport("__Internal")]
+    //private static extern void iospay(string body, string amount, string trade_no);
 
     public void Pay(string order_id, string price, string title)
     {
@@ -60,7 +60,7 @@ public class PayPay : MonoBehaviour
         info.productid = order_id;
         Alipaypay(info);
 #elif UNITY_IPHONE
-		 iospay(title,"0.01",order_id);
+		 //iospay(title,"0.01",order_id);
 #endif
     }
 
@@ -74,7 +74,7 @@ public class PayPay : MonoBehaviour
         info.productid = order_id;
         Alipaypay(info);
 #elif UNITY_IPHONE
-		 iospay(title,"0.01",order_id);
+		 //iospay(title,"0.01",order_id);
 #endif
     }
     public void Alipaypay(PayInfo payInfo)
