@@ -65,6 +65,7 @@ public class TuiGuang : btn_Http_BaseEvent
                 }
                 else
                 transformData.GetObjectValue<Text>("name").text = child["name"].ToString();
+                transformData.GetObjectValue<Text>("state").text = child["zhuangtai"].ToString();
                 Button btn_talk = transformData.GetObjectValue<Button>("bf");
                 btn_talk.onClick.AddListener(delegate ()
                 {

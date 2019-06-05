@@ -61,7 +61,7 @@ public class Static
     public bool MusicSwichButton = true;
 
 
-    public string URL = "http://zsmz.4cv47.cn/";//"http://www.maidada.vip/";
+    public string URL = "http://www.fenzuke.cn/";//"http://www.maidada.vip/";"http://zsmz.ltest.cn/
 
     public string LocalURL = "http://47.94.99.18:19011/";//"http://192.168.88.60:19003/";
 
