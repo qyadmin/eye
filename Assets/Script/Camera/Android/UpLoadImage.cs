@@ -13,11 +13,14 @@ public class UpLoadImage : MonoBehaviour
 
     public AndroidPhoto AndroidPhoto;
 
+    public IOSPhoto IosPhoto;
+
     public void OnImageClick()
     {
         if (TargetImage.sprite == TargetSprite)
         {
             AndroidPhoto.SetUpLoad(this);
+            IosPhoto.SetUpLoad(this);
             AndroidPhoto.OpenPhoto();
             return;
         }

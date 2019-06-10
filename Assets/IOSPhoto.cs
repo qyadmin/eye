@@ -8,6 +8,11 @@ public class IOSPhoto : MonoBehaviour
     //public HttpImage GetRaw;
     byte[] SaveHeadImg = null;
 
+    [HideInInspector]
+    public bool IsFuKuan;
+
+    private UpLoadImage _fuKuanLoad;
+
     void Start()
     {
 #if UNITY_IPHONE
@@ -39,6 +44,12 @@ public class IOSPhoto : MonoBehaviour
         DestroyFuntion();
 #endif
 
+    }
+
+    public void SetUpLoad(UpLoadImage temp)
+    {
+        IsFuKuan = true;
+        _fuKuanLoad = temp;
     }
 
     public void OpenPhoto()
@@ -75,8 +86,17 @@ public class IOSPhoto : MonoBehaviour
         //        SaveHeadImg = bytes;
         //
         //        Sprite sprites = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f));
-        a.texture = tex;
-        LoadImage.GetLoadIamge.SendImage(tex);
+
+        if (IsFuKuan)
+        {
+            _fuKuanLoad.SendImage(tex);
+        }
+        else
+        {
+            a.texture = tex;
+            LoadImage.GetLoadIamge.SendImage(tex);
+        }
+
         //GetRaw.image[0].sprite = sprites;
         //GetRaw.SavePath = null;
     }
