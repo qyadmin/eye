@@ -44,7 +44,7 @@ public class HttpModel : MonoBehaviour
 
     private void Start()
     {
-       
+
     }
 
     public bool isLocksend = false;
@@ -103,7 +103,9 @@ public class HttpModel : MonoBehaviour
 
         message = EncryptDecipherTool.GetListOld(message, IsLock);
         url = url + message;
-       // url = Uri.EscapeUriString(url);
+#if UNITY_IPHONE
+        url = Uri.EscapeUriString(url);
+#endif
         StartCoroutine(GetMessage(url));
     }
 
@@ -138,7 +140,7 @@ public class HttpModel : MonoBehaviour
             Data.ShowMessage = www.text;
             //try
             //{
-           // string jsondata = System.Text.Encoding.UTF8.GetString(www.bytes, 0, www.bytes.Length);
+            // string jsondata = System.Text.Encoding.UTF8.GetString(www.bytes, 0, www.bytes.Length);
             string jsondata = System.Text.Encoding.UTF8.GetString(www.bytes, 3, www.bytes.Length - 3);
             jsondata = jsondata.Remove(0, Data.CutCount);
             foreach (HttpModel child in Data.ShareModel)
@@ -265,7 +267,7 @@ public class HttpModel : MonoBehaviour
             ShowMessageWait();
         }
 
-       // Debug.Log(Data.ShowMessage);
+        // Debug.Log(Data.ShowMessage);
     }
 
 
